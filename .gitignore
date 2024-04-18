@@ -4,6 +4,7 @@
 *.pyc
 *.so
 *.[ao]
+**/*.DS_Store
 /MANIFEST
 /dist/*
 /.settings/*
@@ -34,3 +35,4 @@ dist/
 src/netzob/Fuzzing/Generators/xorshift.c
 doc/documentation/build/
 .vagrant/
+venv

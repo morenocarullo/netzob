@@ -1,0 +1,24 @@
+{
+  "name": "Netzob DevContainer",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hbenl.vscode-test-explorer",
+        "GitHub.vscode-pull-request-github"
+      ]
+    }
+  },
+  "postCreateCommand": "virtualenv venv && sh ./venv/bin/activate && pip3 install Cython==0.29.32 && pip3 install -e .",
+  "runArgs": [
+    "-u",
+    "root",
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined",
+    "--hostname",
+    "netzob-dev",
+    "-v",
+    "${env:HOME}/.ssh:/root/.ssh:ro"
+  ]
+}
